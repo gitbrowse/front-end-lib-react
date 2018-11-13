@@ -1,17 +1,11 @@
 import React from 'react'
 import { Menu, Icon } from 'antd';
+import { Link } from 'react-router-dom'
+
 
 import './aside-bar.less'
 import 'antd/lib/menu/style/css';
 import 'antd/lib/icon/style/css';
-
-// export default class AsideBar extends React.Component {
-//     render() {
-//         return (
-//             <div className="aside-bar">aside-bar</div>
-//         )
-//     }
-// }
 
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
@@ -32,15 +26,36 @@ export default class AsideBar extends React.Component {
                     defaultOpenKeys={['sub1']}
                     mode="inline"
                 >
-                    <SubMenu key="sub1" title={<span><Icon type="appstore" /><span>Navigation Two</span></span>}>
-                        <Menu.Item key="5">Option 5</Menu.Item>
-                        <Menu.Item key="6">Option 6</Menu.Item>
+                    <SubMenu key="1" title={<span><Icon type="appstore" /><span>功能</span></span>}>
+                        <Menu.Item key="1-1">
+                            <Link to={{pathname: '/webSocket'}}>
+                                webSocket
+                            </Link>
+                        </Menu.Item>
+                        <Menu.Item key="1-2">
+                            <Link to={{pathname: '/redux'}}>
+                                redux
+                            </Link>
+                        </Menu.Item>
                     </SubMenu>
-                    <SubMenu key="sub2" title={<span><Icon type="setting" /><span>Navigation Three</span></span>}>
-                        <Menu.Item key="9">Option 9</Menu.Item>
-                        <Menu.Item key="10">Option 10</Menu.Item>
-                        <Menu.Item key="11">Option 11</Menu.Item>
-                        <Menu.Item key="12">Option 12</Menu.Item>
+                    <SubMenu key="2" title={<span><Icon type="setting" /><span>文档</span></span>}>
+                        <Menu.Item key="2-1">
+                            <Link to={{pathname: '/test'}}>
+                                测试
+                            </Link>
+                        </Menu.Item>
+                    </SubMenu>
+                    <SubMenu key="3" title={<span><Icon type="setting" /><span>组件</span></span>}>
+                        <Menu.Item key="3-1">
+                            <Link to={{pathname: '/pullToRefresh'}}>
+                                pullTORefresh
+                            </Link>
+                        </Menu.Item>
+                        <Menu.Item key="3-2">
+                            <Link to={{pathname: '/listView'}}>
+                                listView
+                            </Link>
+                        </Menu.Item>
                     </SubMenu>
                 </Menu>
             </div>

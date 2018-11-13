@@ -5,81 +5,27 @@ import PropTypes from 'prop-types';
 import AsideBar from './components/aside-bar';
 import MainContainer from './components/main-container';
 import { Provider } from 'react-redux';
-
+import { HashRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
+import reducer from './reducers/index';
 
 import './App.less';
 
-
-
-const changeCityId = (cityId, action) => {
-    if(action.type === 'increase-cityId'){
-        cityId+=1;
-    } else if (action.type === 'decrease-cityId') {
-        cityId-=1;
-    }
-    return cityId;
-}
-const changeShopId = (shopId, action) => {
-    if(action.type === 'increase-shopId'){
-        shopId+=1;
-    } else if (action.type === 'decrease-shopId') {
-        shopId-=1;
-    }
-    return shopId;
-}
-const changeTimeType = (timeType, action) => {
-    if(action.type === 'increase-timeType'){
-        timeType+=1;
-    } else if (action.type === 'decrease-timeType') {
-        timeType-=1;
-    }
-    return timeType;
-}
-
-
-const filter = (state={cityId: 0, shopId: 0, timeType: 0}, action) => {
-
-    return {
-        cityId: changeCityId(state.cityId, action),
-        shopId: changeShopId(state.shopId, action),
-        timeType: changeTimeType(state.timeType, action),
-    }
-}
-
-let store = createStore(filter);
+let store = createStore(reducer);
 
 class App extends Component {
-
-    // static propTypes = {
-    //     store: PropTypes.object.isRequired,
-    // };
-
-    // static childContextTypes = {
-    //     themeColor: PropTypes.string
-    // }
-    // getChildContext () {
-    //     return { themeColor: this.state.themeColor }
-    // }
-
-    constructor(props){
-        super(props);
-        this.state = {}
-    }
-
-    componentDidMount() {
-        // console.log(this.props);
-    }
 
     render() {
         return (
             <Provider store={ store }>
-                <div id="app" className="app-container">
-                    <TopNavBar></TopNavBar>
-                    <div className="section">
-                        <AsideBar></AsideBar>
-                        <MainContainer store={store}></MainContainer>
+                <Router>
+                    <div id="app" className="app-container">
+                        <TopNavBar></TopNavBar>
+                        <div className="section">
+                            <AsideBar></AsideBar>
+                            <MainContainer store={store}></MainContainer>
+                        </div>
                     </div>
-                </div>
+                </Router>
             </Provider>
         );
     }

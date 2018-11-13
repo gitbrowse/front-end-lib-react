@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import TopNavBar from './components/TopNavBar';
 import { createStore } from 'redux'
-import PropTypes from 'prop-types';
 import AsideBar from './components/aside-bar';
 import MainContainer from './components/main-container';
 import { Provider } from 'react-redux';
-import { HashRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
+import { HashRouter as Router} from 'react-router-dom'
 import reducer from './reducers/index';
 
 import './App.less';
@@ -30,10 +29,6 @@ class App extends Component {
         );
     }
 }
-
-// App = connect((state) => ({
-//     counter: state.counter
-// }))(App);
 
 
 export default App;

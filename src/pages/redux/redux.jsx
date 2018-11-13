@@ -1,9 +1,6 @@
 import React, { PureComponent } from 'react'
-import { connect } from 'react-redux';
 
-import setCount from '../../action/count';
-
-class redux extends PureComponent {
+class Redux extends PureComponent {
 
     state = {
         newCount: 0,
@@ -24,12 +21,4 @@ class redux extends PureComponent {
     }
 }
 
-redux = connect((state) => {
-    return state;
-},(dispatch) => {
-    return {
-        setCount: (newCount) => { dispatch(setCount(newCount)) }
-    }
-})(redux);
-
-export default redux;
+export default Redux;

@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 import favicon from '../favicon.png';
-import PropTypes from 'prop-types';
 
 import './TopNavBar.less';
 
 class TopNavBar extends Component {
-
-    // static contextTypes = {
-    //     themeColor: PropTypes.string
-    // }
 
     render() {
         return (

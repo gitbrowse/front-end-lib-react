@@ -2,13 +2,11 @@ import React from 'react'
 import { Menu, Icon } from 'antd';
 import { Link } from 'react-router-dom'
 
-
 import './aside-bar.less'
 import 'antd/lib/menu/style/css';
 import 'antd/lib/icon/style/css';
 
 const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
 
 export default class AsideBar extends React.Component {
     handleClick = (e) => {
@@ -28,31 +26,31 @@ export default class AsideBar extends React.Component {
                 >
                     <SubMenu key="1" title={<span><Icon type="appstore" /><span>功能</span></span>}>
                         <Menu.Item key="1-1">
-                            <Link to={{pathname: '/webSocket'}}>
+                            <Link to={{pathname: '/web/webSocket'}}>
                                 webSocket
                             </Link>
                         </Menu.Item>
                         <Menu.Item key="1-2">
-                            <Link to={{pathname: '/redux'}}>
+                            <Link to={{pathname: '/web/redux'}}>
                                 redux
                             </Link>
                         </Menu.Item>
                     </SubMenu>
                     <SubMenu key="2" title={<span><Icon type="setting" /><span>文档</span></span>}>
                         <Menu.Item key="2-1">
-                            <Link to={{pathname: '/test'}}>
+                            <Link to={{pathname: '/web/test'}}>
                                 测试
                             </Link>
                         </Menu.Item>
                     </SubMenu>
                     <SubMenu key="3" title={<span><Icon type="setting" /><span>组件</span></span>}>
                         <Menu.Item key="3-1">
-                            <Link to={{pathname: '/pullToRefresh'}}>
+                            <Link to={{pathname: '/web/pullToRefresh'}}>
                                 pullTORefresh
                             </Link>
                         </Menu.Item>
                         <Menu.Item key="3-2">
-                            <Link to={{pathname: '/listView'}}>
+                            <Link to={{pathname: '/web/listView'}}>
                                 listView
                             </Link>
                         </Menu.Item>

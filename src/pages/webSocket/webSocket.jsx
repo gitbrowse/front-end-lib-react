@@ -1,9 +1,6 @@
 import React, { PureComponent } from 'react'
 import io from 'socket.io-client';
 
-
-
-
 export default class webSocket extends PureComponent {
 
     state = {

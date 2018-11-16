@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import favicon from '../favicon.png';
+import favicon from '../../../favicon.png';
 
 import './TopNavBar.less';
 

@@ -12,10 +12,13 @@ export default class webSocket extends PureComponent {
     }
 
     initSocket() {
-        const wsurl = 'ws://47.92.222.71:8001';
+        // const wsurl = 'ws://47.92.222.71:8001';
+        const wsurl = 'ws://localhost:8001';
         console.log(wsurl);
 
-        this.socketIO = io.connect(wsurl);
+        this.socketIO = io.connect(wsurl, {
+            "transports": ['websocket']
+        });
         this.socketIO.emit('group', {
             type: 'position',
             data: 'webSocket',

@@ -1,15 +1,17 @@
-import React from 'react';
+import React,{ Component ,PureComponent } from 'react';
 import ReactDOM from 'react-dom';
 import './index.less';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import { createStore } from 'redux'
-import { Provider } from 'react-redux';
-// import counter from './reducers/counter';
-//
-// const store = createStore(counter);
+import axios from '@/utils/axios';
+Object.assign(PureComponent.prototype, {
+    $axios: axios,
+})
 
+Object.assign(Component.prototype, {
+    $axios: axios,
+})
 
 
 ReactDOM.render(

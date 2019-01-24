@@ -15,6 +15,7 @@ export default class Index extends PureComponent{
                     <Route path="/app/pull-to-refresh" component={PullToRefresh} />
                     <Route path="/app/list-view" component={ListView} />
                     <Route path="/app/roll-load" component={RollLoad} />
+                    <Route path="/app/ajax"/>
                     <Redirect to="/app/pull-to-refresh" />
                 </Switch>
             </div>

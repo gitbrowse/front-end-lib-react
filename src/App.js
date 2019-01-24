@@ -8,6 +8,7 @@ import './App.less';
 import WebIndex from "./pages/index/index";
 import AppIndex from "./app-pages/index/index";
 
+
 let store = createStore(reducer);
 
 class App extends Component {
